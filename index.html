@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votre Carrière Astrologique</title>
+<style>
+  /* Styles existants */
+  body { font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; color: #333; background-color: #f4f4f4; }
+  .header { text-align: center; padding: 20px 0; background-color: #fff; border-bottom: 1px solid #ddd; }
+  .header img { width: 150px; height: auto; margin-bottom: 20px; }
+  .cta, .form-section { text-align: center; padding: 20px; background-color: #f8f9fa; margin: 40px 0; }
+  .video { text-align: center; margin: 20px 0; }
+  .benefits, .testimonials { padding: 20px; }
+  .benefit-item, .testimonial { margin-bottom: 20px; }
+  .cta-button, .form-button {
+      background-color: #0056b3;
+      color: #ffffff;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  .cta-button:hover { background-color: #003d82; }
+  .footer { background-color: #f8f9fa; text-align: center; padding: 10px; font-size: 14px; }
+  input[type="text"], input[type="email"], input[type="tel"] { padding: 10px; margin: 5px 0; width: 80%; border-radius: 5px; border: 1px solid #ddd; }
+  .offer { font-weight: bold; color: #007bff; }
+  #timer { color: red; font-weight: bold; }
+  .strike { text-decoration: line-through; }
+
+  /* Ajoutez ici d'autres styles personnalisés si nécessaire */
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Découvrez Votre Carrière Idéale Grâce à l'Astrologie</h1>
+    <!-- Emplacement pour l'intégration de la vidéo -->
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=1PiwHktMukc" frameborder="0" allowfullscreen></iframe>
+    <!-- Bouton d'inscription qui redirige vers PayPal -->
+    <a href="https://www.paypal.com/ncp/payment/HDE3SQL9E6X2A" class="cta-button" target="_blank">Je règle ma consultation</a>
+</div>
+
+<div class="form-section">
+    <h2>Inscrivez-vous pour votre consultation</h2>
+    <form id="contactForm">
+        <input type="text" placeholder="Votre nom">
+        <input type="email" placeholder="Votre email">
+        <input type="tel" placeholder="Votre téléphone">
+        <a href="https://www.paypal.com/ncp/payment/HDE3SQL9E6X2A" class="form-button" target="_blank">Payer avec PayPal</a>
+    </form>
+    <p class="offer"><span class="strike">89 euros</span> 39,99 euros seulement !</p>
+</div>
+
+<div class="cta">
+    <p>Prêt à trouver votre voie ?</p>
+    <a href="https://www.paypal.com/ncp/payment/HDE3SQL9E6X2A" class="cta-button" target="_blank"> Je règle ma consultation</a>
+</div>
+
+<div class="footer">
+    Contactez-nous à astro.expertisefrance@gmail.com | Suivez-nous sur les réseaux sociaux
+</div>
+
+<script>
+// JavaScript pour le compteur de temps
+function updateTimer() {
+    var now = new Date();
+    var endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 17, 0, 0); // 17h00 aujourd'hui
+    var remaining = endOfDay - now;
+
+    if (remaining < 0) {
+        endOfDay.setDate(endOfDay.getDate() + 1);
+        remaining = endOfDay - now;
+    }
+
+    var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+    setTimeout(updateTimer, 1000);
+}
+updateTimer();
+</script>
+
+</body>
+</html>
